@@ -15,6 +15,18 @@ public class Strecke {
         else return false;
     }
 
+    @Override
+    public String toString() {
+        String ausgabe = String.valueOf(this.getPunktA());
+        int abstand = this.getPunktB()-this.getPunktA();
+        if (abstand == 0) return ausgabe;
+        else {
+            for (int i = 0; i < abstand; i++) ausgabe += "-";
+            ausgabe += String.valueOf(this.getPunktB());
+        }
+        return ausgabe;
+    }
+
     public int getPunktA() {
         return punktA;
     }
