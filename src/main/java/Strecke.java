@@ -7,9 +7,9 @@ public class Strecke {
         this.punktA = Math.min(A, B);
         this.punktB = Math.max(A, B);
     }
-
+    // Wenn größter Startpunkt < kleinster Endpunkt dann gibt es Überschneidung!
     public static boolean pruefeUeberschneidung(Strecke strecke1, Strecke strecke2){
-        if (Math.min(strecke1.getPunktA(), strecke2.getPunktA()) < Math.max(strecke1.getPunktB(), strecke2.getPunktB())){
+        if (Math.max(strecke1.getPunktA(), strecke2.getPunktA()) < Math.min(strecke1.getPunktB(), strecke2.getPunktB())){
             return true;
         }
         else return false;
