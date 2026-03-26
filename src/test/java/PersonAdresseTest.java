@@ -13,15 +13,20 @@ public class PersonAdresseTest {
     }
     @Test
     public void testAdresseFehlerStrasse() {
-        try{
-            Adresse fehlerAdresse = new Adresse("teststrasse","3","97080", "Würzburg");
-            fail("Runtime Exception erwartet");
-        }
-        catch(RuntimeException e){
-            String errorMessage = e.getMessage();
-            assertEquals("Strassenname muss mit einem Großbuchstaben beginnen.", errorMessage);
-        }
+//        try {
+//            Adresse fehlerAdresse = new Adresse("teststrasse", "3", "97080", "Würzburg");
+//            fail("Runtime Exception erwartet");
+//        } catch (RuntimeException e) {
+//            String errorMessage = e.getMessage();
+//            assertEquals("Strassenname muss mit einem Großbuchstaben beginnen.", errorMessage);
+//        }
+        RuntimeException e = assertThrows(RuntimeException.class, () -> {
+            Adresse fehlerAdresse = new Adresse("teststrasse", "3", "97080", "Würzburg");
+        });
+        String errorMessage = e.getMessage();
+        assertEquals("Strassenname muss mit einem Großbuchstaben beginnen.", errorMessage);
     }
+
     @Test
     public void testAdresseFehlerOrt() {
         try{

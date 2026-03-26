@@ -7,8 +7,8 @@ public class KugelvolumenTest {
     public void berechneKugelVolumenTest(){
 
         assertTrue(0 == Kugelvolumen.berechneKugelvolumen(0.0));
-        assertEquals(4.189,Kugelvolumen.berechneKugelvolumen(1.0),0.1);
-        assertEquals(523.6,Kugelvolumen.berechneKugelvolumen(5.0), 0.1);
+        assertEquals(4.189,Kugelvolumen.berechneKugelvolumen(1.0),0.01);
+        assertEquals(523.6,Kugelvolumen.berechneKugelvolumen(5.0), 0.01);
     }
 
     @Test
