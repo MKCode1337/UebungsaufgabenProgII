@@ -1,3 +1,7 @@
+package test14;
+import lektion14.*;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,8 +11,8 @@ public class PunktTest {
     @Test
     public void verschiebePunktTestKorrekteWerte(){
         testPunkt.verschiebePunkt(600,400);
-        assertEquals(600, testPunkt.x);
-        assertEquals(400, testPunkt.y);
+        Assertions.assertEquals(600, testPunkt.x);
+        Assertions.assertEquals(400, testPunkt.y);
     }
 
     @Test

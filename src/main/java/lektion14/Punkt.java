@@ -1,7 +1,9 @@
+package lektion14;
+
 public class Punkt
 {
-    int x;
-    int y;
+    public int x;
+    public int y;
 
     public void verschiebePunkt(int zielX, int zielY) {
 

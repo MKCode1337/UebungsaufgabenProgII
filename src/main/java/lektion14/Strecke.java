@@ -1,3 +1,5 @@
+package lektion14;
+
 public class Strecke {
     private int punktA;
     private int punktB;

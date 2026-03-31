@@ -1,3 +1,7 @@
+package test14;
+import lektion14.*;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,8 +11,8 @@ public class KugelvolumenTest {
     public void berechneKugelVolumenTest(){
 
         assertTrue(0 == Kugelvolumen.berechneKugelvolumen(0.0));
-        assertEquals(4.189,Kugelvolumen.berechneKugelvolumen(1.0),0.01);
-        assertEquals(523.6,Kugelvolumen.berechneKugelvolumen(5.0), 0.01);
+        Assertions.assertEquals(4.189, Kugelvolumen.berechneKugelvolumen(1.0),0.01);
+        Assertions.assertEquals(523.6, Kugelvolumen.berechneKugelvolumen(5.0), 0.01);
     }
 
     @Test

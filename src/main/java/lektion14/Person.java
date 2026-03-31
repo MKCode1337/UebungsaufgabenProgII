@@ -1,3 +1,5 @@
+package lektion14;
+
 public class Person {
     String vorname;
     String nachname;

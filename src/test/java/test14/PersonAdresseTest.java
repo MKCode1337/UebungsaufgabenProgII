@@ -1,3 +1,6 @@
+package test14;
+import lektion14.*;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +17,7 @@ public class PersonAdresseTest {
     @Test
     public void testAdresseFehlerStrasse() {
 //        try {
-//            Adresse fehlerAdresse = new Adresse("teststrasse", "3", "97080", "Würzburg");
+//            lektion14.Adresse fehlerAdresse = new lektion14.Adresse("teststrasse", "3", "97080", "Würzburg");
 //            fail("Runtime Exception erwartet");
 //        } catch (RuntimeException e) {
 //            String errorMessage = e.getMessage();
