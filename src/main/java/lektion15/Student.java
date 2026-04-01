@@ -3,8 +3,9 @@ package lektion15;
 public class Student extends Person {
 
     @Override
-    public void gibTaetigkeitaus() {
-        System.out.println("Der Student besucht das Fach "+this.fach+".");
+    public String gibTaetigkeitaus() {
+        String ausgabe = "Der Student besucht das Fach "+this.fach+".";
+        return ausgabe;
     }
 
     public Student(String fach) {

@@ -10,7 +10,6 @@ public class Angestellter {
     public int grundgehalt;
     public double gehaltsFaktor;
     public  LocalDate geburtsdatum;
-    protected double gehalt;
 
     public Angestellter(String nachname, String vorname, int ID, int grundgehalt, LocalDate geburtsdatum) {
         this.nachname = nachname;
@@ -19,14 +18,10 @@ public class Angestellter {
         this.grundgehalt = grundgehalt;
         this.gehaltsFaktor = 1.0;
         this.geburtsdatum = geburtsdatum;
-        this.gehalt = grundgehalt*this.gehaltsFaktor;
     }
 
     public double getGehalt() {
-        this.gehalt = this.gehaltsFaktor*this.grundgehalt;
-        return this.gehalt;
-    }
-
-    public Angestellter() {
+        double gehalt = this.gehaltsFaktor*this.grundgehalt;
+        return gehalt;
     }
 }

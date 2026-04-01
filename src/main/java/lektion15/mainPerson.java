@@ -13,7 +13,7 @@ public class mainPerson {
             }
         }
         for (int i = 0; i <100; i++) {
-            personen[i].gibTaetigkeitaus();
+             System.out.println(personen[i].gibTaetigkeitaus());
         }
     }
 }

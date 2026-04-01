@@ -3,8 +3,9 @@ package lektion15;
 public class Professor extends Person {
 
     @Override
-    public void gibTaetigkeitaus() {
-        System.out.println("Der Professor unterrichtet das Fach "+this.fach+".");
+    public String gibTaetigkeitaus() {
+        String ausgabe = "Der Professor unterrichtet das Fach "+this.fach+".";
+        return ausgabe;
     }
 
     public Professor(String fach) {
