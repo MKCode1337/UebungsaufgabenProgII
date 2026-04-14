@@ -25,7 +25,7 @@ public class Brett
     {
       for (int i = 1; i <= 8; i++)
       {
-          if (brett.gibFeld(j,i)) {
+          if (brett.gibFeld(j, i)) {
               kombiniertesBrett.markiereFeld(j, i);
           } else if (this.gibFeld(j, i)) {
               kombiniertesBrett.markiereFeld(j, i);
@@ -34,5 +34,4 @@ public class Brett
     }
     return kombiniertesBrett;
   }
-  
 }
