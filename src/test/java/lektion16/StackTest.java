@@ -1,7 +1,11 @@
 package lektion16;
 
+import lektion14.Kugelvolumen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class StackTest {
     StackImpl stack = new StackImpl();
@@ -16,10 +20,27 @@ public class StackTest {
         Assertions.assertEquals(testB, stack.get(1));
     }
 
-    public void pop() {
-        Object vergleich = stack.get(1);
-        Assertions.assertEquals(vergleich, stack.pop());
-        vergleich = stack.get(0);
-        Assertions.assertEquals(vergleich, stack.pop());
+    @Test
+    public void testpop() {
+        StackImpl stack2 = new StackImpl();
+        stack2.push(testA);
+        stack2.push(testB);
+        Object vergleich = stack2.get(1);
+        Assertions.assertEquals(vergleich, stack2.pop());
+        vergleich = stack2.get(0);
+        Assertions.assertEquals(vergleich, stack2.pop());
+    }
+
+    @Test
+    public void testEmpty() {
+        StackImpl stack3 = new StackImpl();
+        try{
+            stack3.pop();
+            fail("Runtime Exception erwartet");
+        }
+        catch(RuntimeException e){
+            String errorMessage = e.getMessage();
+            assertEquals("Der Stack ist leer.", errorMessage);
+        }
     }
 }
