@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Cyborg;
 
 public interface Roboter extends IntelligenteEntitaet {
     public void arbeiten();

@@ -1,8 +1,9 @@
-package lektion16;
+package lektion16.Stack;
 
 import java.util.ArrayList;
 
 public class StackImpl implements IStack {
+    //Vorteil: StackImpl hat nur seine eigenen Methoden
     ArrayList list = new ArrayList();
 
     public void push(Object obj) {
@@ -10,9 +11,7 @@ public class StackImpl implements IStack {
     }
     public Object pop() {
         if (this.list.isEmpty()) throw new RuntimeException("Der Stack ist leer.");
-        Object pop = this.list.get(this.list.size() - 1);
-        this.list.remove(this.list.size() - 1);
-        return pop;
+       return this.list.remove(this.list.size() - 1);
     }
     public Object get(int index) {
         return this.list.get(index);

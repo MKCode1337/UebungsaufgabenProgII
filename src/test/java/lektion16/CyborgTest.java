@@ -1,5 +1,6 @@
 package lektion16;
 
+import lektion16.Cyborg.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +10,9 @@ public class CyborgTest {
     Mensch menschTest = new MenschImpl();
     Roboter roboterTest = new RoboterImpl();
     Cyborg cyborgTest = new Cyborg();
+
+    // Zufallsverteilung nicht testen, nur mögliche Entscheidungen abfragen.
+    // GEFAHR_LINKS -> RECHTS oder UNENTSCHIEDEN
 
     @Test
     public void testMensch() {

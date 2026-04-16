@@ -1,6 +1,4 @@
-package lektion16;
-
-import static lektion16.Gefahr.GEFAHR_LINKS;
+package lektion16.Cyborg;
 
 public class RoboterImpl implements Roboter {
     @Override

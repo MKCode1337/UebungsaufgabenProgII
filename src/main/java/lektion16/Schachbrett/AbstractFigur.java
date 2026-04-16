@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Schachbrett;
 
 public abstract class AbstractFigur implements Figur
 {

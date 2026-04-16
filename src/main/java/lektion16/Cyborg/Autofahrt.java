@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Cyborg;
 
 public class Autofahrt {
     public static void main(String[] args) {

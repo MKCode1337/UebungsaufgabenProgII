@@ -1,5 +1,9 @@
 package lektion16;
 
+import lektion16.Schachbrett.Brett;
+import lektion16.Schachbrett.Dame;
+import lektion16.Schachbrett.LaeuferImpl;
+import lektion16.Schachbrett.TurmImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +14,7 @@ public class SchachbrettTest {
 
     @Test
     public void testkombiniertesBrett(){
+        //Hier lieber manuell expectedBrett anlegen und abgleichen (implizit auch Test für Laeufer und Turm
         Brett kombiniertesBrett = dame.gibErlaubteFelder();
         Brett turmBrett = turm.gibErlaubteFelder();
         Brett laeuferBrett = laeufer.gibErlaubteFelder();

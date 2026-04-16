@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Schachbrett;
 
 public class Dame extends AbstractFigur implements Laeufer, Turm
 {

@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Schachbrett;
 
 public class TurmImpl extends AbstractFigur implements Turm
 {

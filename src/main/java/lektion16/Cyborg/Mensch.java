@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Cyborg;
 
 public interface Mensch extends IntelligenteEntitaet {
     public void arbeiten();

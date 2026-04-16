@@ -1,6 +1,6 @@
 package lektion16;
 
-import lektion14.Kugelvolumen;
+import lektion16.Stack.StackImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

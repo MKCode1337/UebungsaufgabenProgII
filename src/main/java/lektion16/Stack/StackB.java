@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Stack;
 
 import java.util.ArrayList;
 
@@ -8,8 +8,7 @@ public class StackB {
     public void push(Object obj) {
         this.list.add(obj);
     }
-    public void pop() {
-        System.out.println(this.list.get(this.list.size() - 1));
-        this.list.remove(this.list.size() - 1);
+    public Object pop() {
+        return this.list.remove(this.list.size() - 1);
     }
 }

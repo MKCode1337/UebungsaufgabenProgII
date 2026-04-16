@@ -1,10 +1,10 @@
-package lektion16;
+package lektion16.Cyborg;
 
 import java.util.Random;
 
 public class Cyborg implements Mensch,Roboter {
-    Mensch menschTeil = new MenschImpl();
-    Roboter roboterTeil = new RoboterImpl();
+    private Mensch menschTeil = new MenschImpl();
+    private Roboter roboterTeil = new RoboterImpl();
 
     @Override
     public void arbeiten() {

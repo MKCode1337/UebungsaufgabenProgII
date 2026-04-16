@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Cyborg;
 
 public interface IntelligenteEntitaet {
     public void arbeiten();

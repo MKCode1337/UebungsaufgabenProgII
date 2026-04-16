@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Muenzautomat;
 
 /** Die nachfolgende Klasse beinhaltet einen sehr einfachen
  * Algorithmus zur Ermittlung des Wechselgelds: Es wird

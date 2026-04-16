@@ -1,4 +1,4 @@
-package lektion16;
+package lektion16.Muenzautomat;
 
 /**
  * enum Coin erweitert um einen Konstruktor und um ein Attribut
