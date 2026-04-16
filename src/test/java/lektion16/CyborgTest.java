@@ -13,7 +13,7 @@ public class CyborgTest {
     @Test
     public void testMensch() {
         double verhaeltnis = (double)entscheidungAus10K(menschTest) / 10000.0;
-        Assertions.assertEquals(0.25, verhaeltnis, 0.1);
+        Assertions.assertEquals(0.25, verhaeltnis, 0.05);
     }
     @Test
     public void testRoboter() {
@@ -24,7 +24,6 @@ public class CyborgTest {
     @Test
     public void testCyborg() {
         double verhaeltnis = (double)entscheidungAus10K(cyborgTest) / 10000.0;
-        System.out.println(verhaeltnis);
         Assertions.assertEquals(0.125, verhaeltnis, 0.01);
     }
 
