@@ -1,4 +1,4 @@
-package lektion15;
+package lektion15.Quiz;
 
 public class Textfrage extends Frage {
 

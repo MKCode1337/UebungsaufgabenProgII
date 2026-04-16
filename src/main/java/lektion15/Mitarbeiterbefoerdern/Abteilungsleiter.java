@@ -1,4 +1,4 @@
-package lektion15;
+package lektion15.Mitarbeiterbefoerdern;
 
 import java.time.LocalDate;
 

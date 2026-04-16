@@ -1,5 +1,7 @@
 package lektion15;
 
+import lektion15.Mitarbeiterbefoerdern.Abteilungsleiter;
+import lektion15.Mitarbeiterbefoerdern.Angestellter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,6 @@
-package lektion15;
+package lektion15.Mitarbeiterbefoerdern;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Angestellter {
     public String nachname;

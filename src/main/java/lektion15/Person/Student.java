@@ -1,4 +1,4 @@
-package lektion15;
+package lektion15.Person;
 
 public class Student extends Person {
 

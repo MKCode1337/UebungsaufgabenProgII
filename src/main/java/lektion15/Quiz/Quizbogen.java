@@ -1,4 +1,5 @@
-package lektion15;
+package lektion15.Quiz;
+
 import java.util.ArrayList;
 import java.util.List;
 
