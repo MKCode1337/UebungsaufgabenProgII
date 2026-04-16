@@ -52,4 +52,8 @@ public class Cyborg implements Mensch,Roboter {
     public void schlafen() {
 
     }
+    @Override
+    public String toString() {
+        return "Cyborg";
+    }
 }

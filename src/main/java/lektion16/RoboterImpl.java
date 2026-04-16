@@ -25,6 +25,7 @@ public class RoboterImpl implements Roboter {
                 break;
             case GEFAHR_VORNE:
                 entscheidung = Entscheidung.BREMSEN;
+                break;
             default:
                 entscheidung = Entscheidung.UNENTSCHIEDEN;
         }
@@ -39,5 +40,10 @@ public class RoboterImpl implements Roboter {
     @Override
     public void warten() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Roboter";
     }
 }

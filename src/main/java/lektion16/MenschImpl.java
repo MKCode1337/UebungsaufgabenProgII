@@ -31,6 +31,7 @@ public class MenschImpl implements Mensch {
                     break;
                 case GEFAHR_VORNE:
                     entscheidung = Entscheidung.BREMSEN;
+                    break;
                 default:
                     entscheidung = Entscheidung.UNENTSCHIEDEN;
             }
@@ -46,5 +47,10 @@ public class MenschImpl implements Mensch {
     @Override
     public void schlafen() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Mensch";
     }
 }
