@@ -53,8 +53,8 @@ public class WertebereichTest {
 
     public static void writeTestCopy(int off, int len)  throws IOException
     {
-        try(InputStream fis = new FileInputStream("C:\\Users\\maxii\\Projekte\\Maven\\src\\test\\java\\lektion17\\test.txt");
-            OutputStream fos = new FileOutputStream("C:\\Users\\maxii\\Projekte\\Maven\\src\\test\\java\\lektion17\\testcopy.txt");)
+        try(InputStream fis = new FileInputStream("test.txt");
+            OutputStream fos = new FileOutputStream("testcopy.txt");)
         {
             byte[] b = new byte[5];
             int n;
