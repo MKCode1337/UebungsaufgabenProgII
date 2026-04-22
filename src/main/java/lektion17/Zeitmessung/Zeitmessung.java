@@ -10,12 +10,14 @@ public class Zeitmessung {
         boolean korrekterPfad = false;
         FileInputStream fislesen =  null;
         Scanner sc = new Scanner(System.in);
+        File quellDatei = null;
         do {
             System.out.println("Dateipfad eingeben: " + "\n");
             String eingabe = sc.nextLine();
             try{
                 fislesen =  new FileInputStream(eingabe);
                 korrekterPfad = true;
+                quellDatei = new File(eingabe);
             } catch (FileNotFoundException e) {
                 fislesen = null;
                 System.out.println("Datei nicht gefunden!");
@@ -23,22 +25,35 @@ public class Zeitmessung {
             }
         }while (!korrekterPfad);
 
-        //Alle 3 Methoden 1x ausführen
-        try (FileInputStream fis = fislesen;
-        FileOutputStream fos = new FileOutputStream("ziel.mp3");) {
+        int durchlaeufe = 10;
+        long[] dauer1 = new long[durchlaeufe];
+        long[] dauer2 = new long[durchlaeufe];
+        long[] dauer3 = new long[durchlaeufe];
 
-            long dauer1 = copyByteUnbuffered(fis, fos);
-            long dauer2 = copyByteBuffered(fis, fos);
-            long dauer3 = copy1024Unbuffered(fis, fos);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        //sc.close();
+            try (FileInputStream fis = fislesen;
+                 FileOutputStream fos = new FileOutputStream("ziel.mp3");) {
+                // 10 Durchläufe
+                for (int i = 0; i<durchlaeufe; i++){
+                    dauer1[i] = copyByteUnbuffered(fis, fos);
+                    dauer2[i] = copyByteBuffered(fis, fos);
+                    dauer3[i] = copy1024Unbuffered(fis, fos);
+                }
+                double zeit1 = durchschnitt(dauer1);
+                System.out.println("Durchschnittswert unbuffered byteweise: "+zeit1);
+                double zeit2 = durchschnitt(dauer2);
+                System.out.println("Durchschnittswert buffered byteweise: "+zeit2);
+                double zeit3 = durchschnitt(dauer3);
+                System.out.println("Durchschnittswert unbuffered 1024: "+zeit2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        sc.close();
+        File zielDatei = new File("ziel.mp3");
+        System.out.println(" Laenge Zieldatei: " + zielDatei.length()+"\n"+"Laenge Quelldatei: "+quellDatei.length()+"\n");
     }
 
     public static long copyByteUnbuffered(FileInputStream fis, FileOutputStream fos) {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         try
         {
             copySimple(fis, fos);
@@ -47,12 +62,12 @@ public class Zeitmessung {
         {
             e.printStackTrace();
         }
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long duration = endTime - startTime;
         return duration;
     }
     public static long copyByteBuffered(FileInputStream fis, FileOutputStream fos) {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         BufferedInputStream bis = new BufferedInputStream(fis);
         BufferedOutputStream bos = new BufferedOutputStream(fos);
         try
@@ -63,12 +78,12 @@ public class Zeitmessung {
         {
             e.printStackTrace();
         }
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long duration = endTime - startTime;
         return duration;
     }
     public static long copy1024Unbuffered(FileInputStream fis, FileOutputStream fos) {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         try
         {
             copy1024(fis, fos);
@@ -77,7 +92,7 @@ public class Zeitmessung {
         {
             e.printStackTrace();
         }
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long duration = endTime - startTime;
         return duration;
     }
@@ -128,5 +143,14 @@ public class Zeitmessung {
         }while (!korrekterPfad);
         sc.close();
         return fis;
+    }
+
+    private static double durchschnitt(long[] werte){
+        long summe = 0;
+        int i;
+        for(i = 0; i<werte.length; i++){
+            summe += werte[i];
+        }
+        return (double) summe / i;
     }
 }
