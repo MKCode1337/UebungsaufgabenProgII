@@ -96,7 +96,6 @@ public class Zeitmessung {
         long duration = endTime - startTime;
         return duration;
     }
-
     private static void copySimple(InputStream is, OutputStream os) throws IOException
     {
         int b;
@@ -144,7 +143,6 @@ public class Zeitmessung {
         sc.close();
         return fis;
     }
-
     private static double durchschnitt(long[] werte){
         long summe = 0;
         int i;
