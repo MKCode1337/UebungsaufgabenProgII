@@ -11,7 +11,7 @@ public class OutputStreamDoubler extends OutputStream {
 
     public static void main(String[] args) throws FileNotFoundException {
         try (FileOutputStream fos1 = new FileOutputStream("file1.txt");
-        FileOutputStream fos2 = new FileOutputStream("file2.txt");) {
+             FileOutputStream fos2 = new FileOutputStream("file2.txt");) {
             OutputStreamDoubler osd = new OutputStreamDoubler(fos1, fos2);
             int[] bytefolge = {65, 66, 67, 68, 69, 70};
             for (int i = 0; i < bytefolge.length; i++) {
@@ -20,14 +20,13 @@ public class OutputStreamDoubler extends OutputStream {
             try {
                 osd.close();
             } catch (IOException e) {
-                e.getStackTrace();
+                e.printStackTrace();
             }
-        }
+            }
         catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
-
     public OutputStreamDoubler(OutputStream OS1, OutputStream OS2) {
         this.OS1 = OS1;
         this.OS2 = OS2;
@@ -44,6 +43,7 @@ public class OutputStreamDoubler extends OutputStream {
         }
         try {
             OS2.close();
+            //throw new IOException();
         }
         catch (IOException e) {
             excGeworfen = true;
@@ -52,14 +52,12 @@ public class OutputStreamDoubler extends OutputStream {
         if (excGeworfen) {throw new IOException(fehlerMsg);}
     }
     public void write(int b) {
+        tryWrite(OS1, b);
+        tryWrite(OS2, b);
+    }
+    public void tryWrite(OutputStream os, int b) {
         try {
-            this.OS1.write(b);
-        }
-        catch (IOException e) {
-            e.getStackTrace();
-        }
-        try {
-            this.OS2.write(b);
+            os.write(b);
         }
         catch (IOException e) {
             e.getStackTrace();

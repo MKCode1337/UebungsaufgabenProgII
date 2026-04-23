@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Zeitmessung {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         //Dateipfad einlesen und FileNotFound behandeln
         boolean korrekterPfad = false;
@@ -43,7 +43,7 @@ public class Zeitmessung {
                 double zeit2 = durchschnitt(dauer2);
                 System.out.println("Durchschnittswert buffered byteweise: "+zeit2);
                 double zeit3 = durchschnitt(dauer3);
-                System.out.println("Durchschnittswert unbuffered 1024: "+zeit2);
+                System.out.println("Durchschnittswert unbuffered 1024: "+zeit3);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -116,32 +116,6 @@ public class Zeitmessung {
             if (n != -1) os.write(b, 0, n);
         }
         while (n != -1);
-    }
-    public static FileInputStream dateipfadEinlesen(){
-        boolean korrekterPfad = false;
-        FileInputStream fis =  null;
-        Scanner sc = new Scanner(System.in);
-        do {
-            System.out.println("Dateipfad eingeben: " + "\n");
-            String eingabe = sc.nextLine();
-            try{
-                fis =  new FileInputStream(eingabe);
-                korrekterPfad = true;
-            } catch (FileNotFoundException e) {
-                fis = null;
-                System.out.println("Datei nicht gefunden!");
-                korrekterPfad = false;
-            }
-            finally {
-                try {
-                    if (fis != null) fis.close();
-                }
-                catch (IOException e) {
-                }
-            }
-        }while (!korrekterPfad);
-        sc.close();
-        return fis;
     }
     private static double durchschnitt(long[] werte){
         long summe = 0;
