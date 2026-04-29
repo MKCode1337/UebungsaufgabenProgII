@@ -1,0 +1,10 @@
+5000000 Studiengang WInf
+5100000 Studiengang Inf
+6100000 Studiengang EC
+5000333 Studiengang WInf
+5118636 Studiengang Inf
+6164646 Studiengang EC
+4100000 Studiengang Quatsch
+5000001 Studiengang WInf
+5100003 Studiengang Inf
+6199999 Studiengang EC
