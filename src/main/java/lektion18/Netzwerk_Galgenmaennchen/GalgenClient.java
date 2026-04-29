@@ -1,0 +1,38 @@
+package lektion18.Netzwerk_Galgenmaennchen;
+
+import java.io.*;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class GalgenClient {
+    public static void main(String[] args)
+    {
+        final int PORT = 5000;
+        final String HOST = "localhost";
+        try (Socket connectionToServer = new Socket(HOST, PORT);
+             OutputStream os = connectionToServer.getOutputStream();
+             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
+             InputStream is = connectionToServer.getInputStream();
+             BufferedReader br = new BufferedReader(new InputStreamReader(is));
+             Scanner sc = new Scanner(System.in);)
+        {
+            String eingabe = "";
+            String antwort = "";
+            do {
+                //Empfangen
+                antwort = br.readLine();
+                System.out.println(antwort);
+
+                //Eingabe einlesen
+                eingabe = sc.nextLine()+" \n";
+                bw.write(eingabe);
+                bw.flush();
+            }
+            while(!antwort.equals("Gewonnen!") && !eingabe.equals("Verloren!"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
