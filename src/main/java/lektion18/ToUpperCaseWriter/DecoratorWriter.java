@@ -1,4 +1,4 @@
-package touppercasewriter;
+package lektion18.ToUpperCaseWriter;
 
 import java.io.IOException;
 import java.io.Writer;

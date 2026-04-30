@@ -4,9 +4,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import lektion18.ToUpperCaseWriter.ToUpperCaseWriter;
 import org.junit.jupiter.api.Test;
 
-import touppercasewriter.ToUpperCaseWriter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,9 +35,9 @@ public class ToUpperCaseWriterTest
   }
 
   public boolean writeInOutTest(String input, String expected){
-    try ( ByteArrayOutputStream baos = new ByteArrayOutputStream();
-          OutputStreamWriter osw = new OutputStreamWriter(baos);
-          ToUpperCaseWriter writer = new ToUpperCaseWriter(osw);)
+    try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+         OutputStreamWriter osw = new OutputStreamWriter(baos);
+         ToUpperCaseWriter writer = new ToUpperCaseWriter(osw);)
     {
       writer.write(input);
       writer.flush();

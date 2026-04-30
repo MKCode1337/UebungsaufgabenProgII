@@ -9,10 +9,10 @@ public class GalgenClient {
     {
         final int PORT = 5000;
         final String HOST = "localhost";
-        try (Socket connectionToServer = new Socket(HOST, PORT);
-             OutputStream os = connectionToServer.getOutputStream();
+        try (Socket connection = new Socket(HOST, PORT);
+             OutputStream os = connection.getOutputStream();
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
-             InputStream is = connectionToServer.getInputStream();
+             InputStream is = connection.getInputStream();
              BufferedReader br = new BufferedReader(new InputStreamReader(is));
              Scanner sc = new Scanner(System.in);)
         {
@@ -28,7 +28,7 @@ public class GalgenClient {
                 bw.write(eingabe);
                 bw.flush();
             }
-            while(!antwort.equals("Gewonnen!") && !eingabe.equals("Verloren!"));
+            while(!antwort.equals("Gewonnen!") && !antwort.equals("Verloren!"));
         }
         catch (Exception e)
         {

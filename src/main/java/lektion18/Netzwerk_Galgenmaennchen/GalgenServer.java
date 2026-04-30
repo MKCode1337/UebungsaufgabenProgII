@@ -7,8 +7,8 @@ import java.net.Socket;
 public class GalgenServer {
     public static void main(String[] args) {
         final int PORT = 5000;
-        try(ServerSocket ss = new ServerSocket(PORT);
-            Socket connection = ss.accept();
+        try(ServerSocket serverSocket = new ServerSocket(PORT);
+            Socket connection = serverSocket.accept();
             InputStream is = connection.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             OutputStream os = connection.getOutputStream();

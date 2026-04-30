@@ -1,9 +1,9 @@
-package touppercasewriter;
+package lektion18.ToUpperCaseWriter;
 
 import java.io.IOException;
 import java.io.Writer;
 
-public class ToUpperCaseWriter extends touppercasewriter.DecoratorWriter
+public class ToUpperCaseWriter extends DecoratorWriter
 {
   public ToUpperCaseWriter(Writer writer)
   {

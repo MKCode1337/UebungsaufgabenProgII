@@ -1,6 +1,5 @@
 package lektion18.GZIPOutputStream;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;

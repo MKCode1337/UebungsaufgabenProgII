@@ -10,19 +10,20 @@ public class Studiengangsplitter {
             splitStudiengaenge(datei);
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
     public static void splitStudiengaenge(String dateiname) throws MatrikelNummerException {
-        try (BufferedReader fr = new BufferedReader(new FileReader(dateiname));
+        try (BufferedReader br = new BufferedReader(new FileReader(dateiname));
              BufferedWriter fwWInf = new BufferedWriter(new FileWriter("WInfNr.txt"));
              BufferedWriter fwInf = new BufferedWriter(new FileWriter("InfNr.txt"));
              BufferedWriter fwEC = new BufferedWriter(new FileWriter("ECNr.txt"));)
         {
             do
             {
-                String line = fr.readLine();
+                String line = br.readLine();
                 if (line == null) {
                     System.out.println("Am Ende der Datei angelangt, beende Programm.");
                     break;
@@ -45,7 +46,7 @@ public class Studiengangsplitter {
             }
             while(true);
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
