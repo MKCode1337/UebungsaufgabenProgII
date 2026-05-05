@@ -51,6 +51,7 @@ public class GalgenServerObj {
     public static String dialog(SpielNachricht msg, ObjectOutputStream oos, ObjectInputStream ois) throws IOException {
         oos.writeObject(msg);
         oos.flush();
+        if (msg.spielBeendet) {return "";}
         try {
             msg = (SpielNachricht) ois.readObject();
         } catch (ClassNotFoundException e) {

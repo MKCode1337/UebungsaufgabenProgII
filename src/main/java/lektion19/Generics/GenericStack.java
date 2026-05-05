@@ -1,10 +1,8 @@
-package lektion19;
-
-import lektion16.Stack.IStack;
+package lektion19.Generics;
 
 import java.util.ArrayList;
 
-public class GenericStack<E> {
+public class GenericStack<E> implements IStackGeneric<E> {
     ArrayList<E> list = new ArrayList<>();
 
     public void push(E element) {

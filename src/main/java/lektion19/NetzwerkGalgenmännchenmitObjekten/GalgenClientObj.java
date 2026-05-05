@@ -24,6 +24,7 @@ public class GalgenClientObj {
                 antwort = msg.text;
                 System.out.println(antwort+"\n");
                 if (msg.treffer) {System.out.println("Treffer!\n");}
+                if (msg.spielBeendet) {break;}
 
                 //Eingabe einlesen
                 eingabe = sc.nextLine();
@@ -32,7 +33,7 @@ public class GalgenClientObj {
                 oos.writeObject(msg);
                 oos.flush();
             }
-            while(!antwort.equals("Gewonnen!") && !antwort.equals("Verloren!"));
+            while(true);
         }
         catch (Exception e)
         {
