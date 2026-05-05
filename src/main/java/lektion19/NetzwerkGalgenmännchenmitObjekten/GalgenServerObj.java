@@ -1,4 +1,4 @@
-package lektion19;
+package lektion19.NetzwerkGalgenmännchenmitObjekten;
 
 import lektion18.Netzwerk_Galgenmaennchen.Galgenmaennchen;
 import lektion18.Netzwerk_Galgenmaennchen.Game;

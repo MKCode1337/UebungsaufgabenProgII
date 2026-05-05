@@ -1,4 +1,4 @@
-package lektion19;
+package lektion19.NetzwerkGalgenmännchenmitObjekten;
 
 import java.io.*;
 import java.net.Socket;

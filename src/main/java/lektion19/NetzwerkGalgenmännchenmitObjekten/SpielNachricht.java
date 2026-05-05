@@ -1,6 +1,5 @@
-package lektion19;
+package lektion19.NetzwerkGalgenmännchenmitObjekten;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 public class SpielNachricht implements Serializable {
