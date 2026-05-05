@@ -17,7 +17,6 @@ public class GalgenServer {
             String inputLine = "";
             String outputLine = "";
             Game aktuellesSpiel = null;
-            boolean spielLaeuft = false;
 
             do {
                 outputLine = "Hallo! Was willst du spielen?";

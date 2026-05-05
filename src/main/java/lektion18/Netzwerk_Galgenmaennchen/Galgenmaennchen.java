@@ -8,6 +8,7 @@ public class Galgenmaennchen extends Game {
     char[] eingabeN = new char[15];
     char[] loesung = new char[rateWort.length];
     int versucheCounter=0;
+    private boolean treffer = false;
 
     @Override
     public String spielStarten() {
@@ -16,6 +17,7 @@ public class Galgenmaennchen extends Game {
 
     @Override
     public String spielZug(String eingabe) {
+        treffer = false;
         //Eingabe verarbeiten
         eingabeN[versucheCounter] = eingabe.toUpperCase().charAt(0);
         versucheCounter++;
@@ -42,6 +44,14 @@ public class Galgenmaennchen extends Game {
         return spielAus;
     }
 
+    @Override
+    public boolean isTreffer() {
+        for (int n = 0; n < rateWort.length; n++) {
+            if (loesung[n] == eingabeN[versucheCounter-1]) {treffer = true;}
+        }
+        return treffer;
+    }
+
     public boolean gewinnPruefen() {
         String loesungswort = String.valueOf(rateWort);
         String eingabeWort = String.valueOf(loesung);
@@ -61,6 +71,7 @@ public class Galgenmaennchen extends Game {
                     break;
                 }
             }
+            if (rateWort[n] == eingabeN[versucheCounter]) {treffer = true;}
             ausgabe += ausgabeChar+" ";
         }
         return ausgabe;

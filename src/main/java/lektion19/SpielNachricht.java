@@ -10,6 +10,7 @@ public class SpielNachricht implements Serializable {
     public SpielNachricht(String text) {
         this.text = text;
         this.spielBeendet = false;
+        this.treffer = false;
     }
 }
 
