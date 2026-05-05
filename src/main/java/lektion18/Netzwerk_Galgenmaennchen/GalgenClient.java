@@ -21,11 +21,13 @@ public class GalgenClient {
             do {
                 //Empfangen
                 antwort = br.readLine();
-                System.out.println(antwort);
+                System.out.println(antwort+"\n");
 
                 //Eingabe einlesen
-                eingabe = sc.nextLine()+" \n";
+                eingabe = sc.nextLine();
+                if (eingabe.isEmpty()) {eingabe = " ";}
                 bw.write(eingabe);
+                bw.newLine();
                 bw.flush();
             }
             while(!antwort.equals("Gewonnen!") && !antwort.equals("Verloren!"));
