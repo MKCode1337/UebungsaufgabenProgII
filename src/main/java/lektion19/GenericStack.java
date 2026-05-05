@@ -1,7 +1,5 @@
 package lektion19;
 
-import lektion16.Stack.IStack;
-
 import java.util.ArrayList;
 
 public class GenericStack<E> {
