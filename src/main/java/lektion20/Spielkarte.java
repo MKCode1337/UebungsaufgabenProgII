@@ -1,5 +1,5 @@
 package lektion20;
 
-public abstract class Spielkarte extends Object{
+public abstract class Spielkarte {
     Kartenspiel kartenspiel;
 }
