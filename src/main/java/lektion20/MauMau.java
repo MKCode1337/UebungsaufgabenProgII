@@ -5,6 +5,7 @@ import java.util.*;
 public class MauMau implements Kartenspiel {
     MauMauKarte karten = new MauMauKarte();
     ArrayList<MauMauKarte> deck = karten.skatDeckGenerieren();
+    MauMauSpieler[] spielers;
 
     @Override
     public MauMauKarte karteZiehen() {

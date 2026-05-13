@@ -8,6 +8,7 @@ public class MauMauKarte extends Spielkarte implements Comparable<MauMauKarte>{
     String farbe;
     String wert;
 
+
     public MauMauKarte(String farbe, String wert){
         this.farbe = farbe;
         this.wert = wert;
@@ -39,12 +40,8 @@ public class MauMauKarte extends Spielkarte implements Comparable<MauMauKarte>{
             if (k.farbe.equals(this.farbe)&& k.wert.equals(this.wert)){indexThis = skatDeck.indexOf(k);}
             if (k.farbe.equals(o.farbe)&& k.wert.equals(o.wert)){indexO = skatDeck.indexOf(k);}
         }
-        System.out.print("This: "+indexThis+" ");
-        System.out.print("O: "+indexO+" ");
-
         if (indexThis > indexO) return 1;
         if (indexThis < indexO) return -1;
-
         else return 0;
     }
 }
