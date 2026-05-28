@@ -10,42 +10,36 @@ public class Exam {
     }
     HashSet<Question> questions = new HashSet<Question>();
 
+    public void readQuestions() throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("questions.csv"))) {
+            String line;
+            do {
+                line = br.readLine();
+                Question.toQuestion(line);
+            }
+            while (line != null);
+        }
+    }
+    public void toTest() throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("test.tex"))) {
+            bw.write(readHeaderFromFile());
+            for (Question q : questions) {
+                String fragetext = "\\textbf{" + q.text + "}\\\\";
+                bw.write(fragetext);
+                bw.newLine();
+                bw.flush();
+            }
+            bw.write("\\end{document}");
+            bw.flush();
+        }
+    }
     public class Question {
-
         String text; //Fragentext
-
         public Question(String line) {
             this.text = line;
         }
-
         //Wandelt eine eingelesene Zeile in ein Question-Objekt um
-        public Question toQuestion(String line) {
-            questions.add(new Question(line));
-            return null;
-        }
-
-        public void readQuestions() throws IOException {
-            try (BufferedReader br = new BufferedReader(new FileReader("questions.csv"))) {
-                String line;
-                do {
-                    line = br.readLine();
-                    toQuestion(line);
-                }
-                while (line != null);
-            }
-        }
-        public void toTest() throws IOException {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter("test.tex"))) {
-                bw.write(readHeaderFromFile());
-                for (Question q : questions) {
-                    String fragetext = "\\textbf{" + q.text + "}\\\\";
-                    bw.write(fragetext);
-                    bw.newLine();
-                    bw.flush();
-                }
-                bw.write("\\end{document}");
-                bw.flush();
-            }
-        }
+        public static Question toQuestion(String line) {
+            return null;}
     }
 }
