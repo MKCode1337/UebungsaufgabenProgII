@@ -1,4 +1,4 @@
-package lektion22;
+package lektion22.MultiThreadTCPServer;
 
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
-public class TCPClient1 {
+public class TCPClient2 {
     static void main() {
         final int PORT = 5000;
         final String HOST = "localhost";
-        ArrayList<Integer> primListe = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        ArrayList<Integer> primListe = new ArrayList<>(Arrays.asList(10, 11, 20, 22, 30, 33, 40, 44, 1254, 1111, 654748));
 
         try (Socket connection = new Socket(HOST, PORT);
              OutputStream os = connection.getOutputStream();

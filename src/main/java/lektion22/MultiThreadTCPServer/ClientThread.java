@@ -1,4 +1,4 @@
-package lektion22;
+package lektion22.MultiThreadTCPServer;
 
 import java.io.*;
 import java.net.Socket;
