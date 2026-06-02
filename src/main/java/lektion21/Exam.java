@@ -5,8 +5,12 @@ import java.util.HashSet;
 
 public class Exam {
     //Liest den Tex-Header aus einer Datei u. gibt ihn als String zurück
-    String readHeaderFromFile() {
-        return "";
+    String readHeaderFromFile() throws IOException {
+        String header = "\\documentclass[10pt,a4paper]{article}\n" +
+                        "\\usepackage[lmargin=2.5cm, rmargin=2.5cm]{geometry}\n" +
+                        "\\usepackage[utf8]{inputenc}\n" +
+                        "\\begin{document}\n";
+        return header;
     }
     HashSet<Question> questions = new HashSet<Question>();
 
@@ -15,7 +19,7 @@ public class Exam {
             String line;
             do {
                 line = br.readLine();
-                Question.toQuestion(line);
+                questions.add(Question.toQuestion(line));
             }
             while (line != null);
         }
@@ -33,13 +37,13 @@ public class Exam {
             bw.flush();
         }
     }
-    public class Question {
+    static class Question {
         String text; //Fragentext
-        public Question(String line) {
-            this.text = line;
-        }
         //Wandelt eine eingelesene Zeile in ein Question-Objekt um
         public static Question toQuestion(String line) {
-            return null;}
+            Question q = new Question();
+            q.text = line;
+            return q;
+        }
     }
 }
