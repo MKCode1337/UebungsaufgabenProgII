@@ -1,8 +1,8 @@
-package lektion22;
+package lektion22.YinYang.YinYangLocalClass;
 
-public class YinYangThread extends Thread {
+public class YinYangLocalClass extends Thread {
     String ausgabe;
-    public YinYangThread(String ausgabe) {
+    public YinYangLocalClass(String ausgabe) {
         this.ausgabe = ausgabe;
     }
 
