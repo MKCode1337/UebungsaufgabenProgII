@@ -1,4 +1,4 @@
-package lektion22;
+package lektion22.PrimzahlenListe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
