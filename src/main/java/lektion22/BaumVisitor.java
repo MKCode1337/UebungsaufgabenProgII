@@ -11,7 +11,6 @@ public class BaumVisitor<E> implements Visitor<E>{
         System.out.print(knoten.content);
         anzahlKnoten++;
     }
-
     public int getAnzahlKnoten() {
         return anzahlKnoten;
     }

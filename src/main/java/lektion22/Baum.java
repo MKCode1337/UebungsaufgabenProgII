@@ -1,7 +1,6 @@
 package lektion22;
 
-public class Baum<E extends Comparable<E>>
-{
+public class Baum<E extends Comparable<E>>{
     public static class Knoten<E>
     {
         Knoten<E> left;
