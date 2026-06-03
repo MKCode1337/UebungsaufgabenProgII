@@ -4,9 +4,17 @@ import static java.lang.Thread.sleep;
 
 public class YinYangThreadMain {
     static void main() {
-        YinYangThread yang = new YinYangThread("Yang");
-        yang.start();
         YinYangThread yin = new YinYangThread("Yin");
         yin.start();
+
+        while (true) {
+            try {
+                System.out.println("Yang");
+                sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 }

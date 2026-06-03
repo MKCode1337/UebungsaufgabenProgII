@@ -1,4 +1,4 @@
-package lektion22;
+package lektion22.Baum_Visitor;
 
 public class Baum<E extends Comparable<E>>{
     public static class Knoten<E>
@@ -23,8 +23,8 @@ public class Baum<E extends Comparable<E>>{
     }
 
     public int size(){
-        BaumVisitor<E> baumVisitor = new BaumVisitor<>();
-        this.traversiere(root, baumVisitor);
-        return baumVisitor.getAnzahlKnoten();
+        ZaehlerBaumVisitor<E> zaehlerBaumVisitor = new ZaehlerBaumVisitor<>();
+        this.traversiere(zaehlerBaumVisitor);
+        return zaehlerBaumVisitor.getAnzahlKnoten();
     }
 }

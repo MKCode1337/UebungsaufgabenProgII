@@ -4,21 +4,26 @@ import lektion22.YinYang.YinYangThread.YinYangThread;
 
 public class YinYangAnonMain {
     static void main() {
-        YinYangThread yang = new YinYangThread("Yang");
-        yang.start();
-        Thread t1 = new Thread(){
+        Thread t1 = anonThread("Yin");
+        t1.start();
+        Thread t2 = anonThread("Yang");
+        t2.start();
+    } //Ende Main
+
+    public static Thread anonThread(String ausgabe){
+        Thread t = new Thread(){
             @Override
             public void run() {
                 while (true) {
                     try {
-                        System.out.println("Yin");
+                        System.out.println(ausgabe);
                         sleep(500);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
             }
-        }; //Ende anonyme Klasse
-        t1.start();
-    } //Ende Main
+        };//Ende anonyme Klasse
+        return t;
+    }
 }

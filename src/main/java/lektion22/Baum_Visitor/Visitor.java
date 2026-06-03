@@ -1,5 +1,5 @@
-package lektion22;
-import lektion22.Baum.Knoten;
+package lektion22.Baum_Visitor;
+import lektion22.Baum_Visitor.Baum.Knoten;
 
 public interface Visitor<T> {
     public void visit(Knoten<T> current);

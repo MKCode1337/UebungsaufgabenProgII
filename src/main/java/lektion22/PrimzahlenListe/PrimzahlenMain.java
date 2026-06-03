@@ -22,7 +22,7 @@ public class PrimzahlenMain {
         t2.start();
         t3.start();
 
-        Map primMap = new HashMap();
+        Map<Integer,Boolean> primMap = new HashMap<>();
         try {
             t1.join();
             t2.join();
@@ -35,8 +35,8 @@ public class PrimzahlenMain {
             e.printStackTrace();
         }
 
-        for (Object obj : primMap.keySet()){
-            System.out.println(obj + " -> " + primMap.get(obj));
+        for (Integer i : primMap.keySet()){
+            System.out.println(i + " -> " + primMap.get(i));
         }
     }
 }

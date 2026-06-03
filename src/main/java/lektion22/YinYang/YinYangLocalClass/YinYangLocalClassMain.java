@@ -4,8 +4,6 @@ import lektion22.YinYang.YinYangThread.YinYangThread;
 
 public class YinYangLocalClassMain {
     static void main() {
-        YinYangThread yang = new YinYangThread("Yin");
-        yang.start();
         class LocalClassThread extends Thread {
             String ausgabe;
             public LocalClassThread(String ausgabe) {
@@ -24,7 +22,9 @@ public class YinYangLocalClassMain {
                 }
             }
         }//Ende LocalClassThread
-        LocalClassThread t = new LocalClassThread("Yang");
-        t.start();
+        LocalClassThread t1 = new LocalClassThread("Yang");
+        LocalClassThread t2 = new LocalClassThread("Yin");
+        t1.start();
+        t2.start();
     }
 }

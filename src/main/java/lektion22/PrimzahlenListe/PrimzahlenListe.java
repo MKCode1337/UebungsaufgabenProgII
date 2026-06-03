@@ -1,16 +1,15 @@
 package lektion22.PrimzahlenListe;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class PrimzahlenListe implements Runnable {
-    ArrayList<Integer> primzahlen;
+    List<Integer> primzahlen;
     Map<Integer,Boolean> primMap = new HashMap<>();
 
     public PrimzahlenListe(List<Integer> primzahlen) {
-        this.primzahlen = (ArrayList<Integer>) primzahlen;
+        this.primzahlen = primzahlen;
     }
 
     @Override
@@ -18,18 +17,14 @@ public class PrimzahlenListe implements Runnable {
         for (Integer i : primzahlen) {
             Boolean isPrimzahl = istPrimzahl(i);
             if (!primMap.containsKey(i)) {
-                if (isPrimzahl) {
-                    primMap.put(i, true);
-                } else {
-                    primMap.put(i, false);
-                }
+                primMap.put(i, isPrimzahl);
             }
             else  {
-                System.out.println("Zahl bereits in der Liste enthalten.");
+                System.out.println(i+" ist bereits in der Liste enthalten.");
             }
         }
     }
-    public Map getMap() {
+    public Map<Integer,Boolean> getMap() {
         return primMap;
     }
     public boolean istPrimzahl(int zahl) {
