@@ -10,5 +10,7 @@ public class BundesligaAnalysator {
         List<Mannschaft> bundesligaTabelle = Mannschaft.createTabelle();
         System.out.println("Alle Mannschaften mit mehr als 50 Punkten: ");
         bundesligaTabelle.stream().filter(mannschaft -> mannschaft.punkte > 50).forEach(mannschaft -> System.out.println(mannschaft.punkte));
+        System.out.println("Alle Mannschaftsnamen: ");
+        bundesligaTabelle.stream().forEach(mannschaft -> System.out.println(mannschaft.name));
     }
 }
