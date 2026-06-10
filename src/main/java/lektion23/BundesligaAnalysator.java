@@ -10,7 +10,7 @@ public class BundesligaAnalysator {
         System.out.println("Alle Mannschaftsnamen: ");
         bundesligaTabelle.stream().forEach(mannschaft -> System.out.println(mannschaft.name));
         System.out.println("Alle Mannschaften, die mit F beginnen nach Alphabet sortiert: ");
-        bundesligaTabelle.stream().sorted((mannschaft1, mannschaft2) -> mannschaft1.name.compareTo(mannschaft2.name)).filter(mannschaft -> mannschaft.name.startsWith("F")).forEach(mannschaft -> System.out.println(mannschaft.name));
+        bundesligaTabelle.stream().sorted((m1, m2) -> m1.name.compareTo(m2.name)).filter(mannschaft -> mannschaft.name.startsWith("F")).forEach(mannschaft -> System.out.println(mannschaft.name));
         System.out.println("Die Mannschaft mit den meisten Gegentoren: ");
         bundesligaTabelle.stream().max((i1, i2) -> Integer.compare(i1.gegentore, i2.gegentore)).ifPresent(mannschaft -> System.out.println(mannschaft.name));
     }
