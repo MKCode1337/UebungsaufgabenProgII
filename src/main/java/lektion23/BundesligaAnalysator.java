@@ -1,9 +1,6 @@
 package lektion23;
 
 import java.util.List;
-import java.util.function.Predicate;
-
-import static java.util.Arrays.compare;
 
 public class BundesligaAnalysator {
     static void main() {
@@ -12,5 +9,9 @@ public class BundesligaAnalysator {
         bundesligaTabelle.stream().filter(mannschaft -> mannschaft.punkte > 50).forEach(mannschaft -> System.out.println(mannschaft.punkte));
         System.out.println("Alle Mannschaftsnamen: ");
         bundesligaTabelle.stream().forEach(mannschaft -> System.out.println(mannschaft.name));
+        System.out.println("Alle Mannschaften, die mit F beginnen nach Alphabet sortiert: ");
+        bundesligaTabelle.stream().sorted((mannschaft1, mannschaft2) -> mannschaft1.name.compareTo(mannschaft2.name)).filter(mannschaft -> mannschaft.name.startsWith("F")).forEach(mannschaft -> System.out.println(mannschaft.name));
+        System.out.println("Die Mannschaft mit den meisten Gegentoren: ");
+        bundesligaTabelle.stream().max((i1, i2) -> Integer.compare(i1.gegentore, i2.gegentore)).ifPresent(mannschaft -> System.out.println(mannschaft.name));
     }
 }
