@@ -41,7 +41,11 @@ public class BrowserLambda
     {
         System.out.println("Normal back");
         BrowserLambda browser = new BrowserLambda();
+        //Optional in variable auffangen
         Optional<URL> back = browser.back();
-        back.ifPresent(url -> System.out.println(browser.retrieveSite(url).toString()));
+        back.ifPresent(backurl -> System.out.println(browser.retrieveSite(backurl)));
+        //ifPResent -> PrintLn
+        BrowserLambda browser2 = new BrowserLambda();
+        browser2.back().ifPresent(backurl -> System.out.println(browser2.retrieveSite(backurl)));
     }
 }
