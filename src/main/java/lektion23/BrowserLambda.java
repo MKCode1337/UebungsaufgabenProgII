@@ -44,7 +44,7 @@ public class BrowserLambda
         //Optional in variable auffangen
         Optional<URL> back = browser.back();
         back.ifPresent(backurl -> System.out.println(browser.retrieveSite(backurl)));
-        //ifPResent -> PrintLn
+        //ifPresent -> PrintLn
         BrowserLambda browser2 = new BrowserLambda();
         browser2.back().ifPresent(backurl -> System.out.println(browser2.retrieveSite(backurl)));
     }
