@@ -2,7 +2,7 @@ package Klausurvorbereitung.Fuhrpark;
 
 import java.util.List;
 
-public class MotorrollerImpl implements Fahrzeug {
+public class MotorrollerImpl extends Fahrzeug {
     public List<Fahrt> fahrtenbuch;
 
     @Override

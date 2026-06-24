@@ -2,7 +2,7 @@ package Klausurvorbereitung.Fuhrpark;
 
 import java.util.List;
 
-public class FahrradImpl implements Fahrzeug {
+public class FahrradImpl extends Fahrzeug {
     public List<Fahrt> fahrtenbuch;
 
     @Override

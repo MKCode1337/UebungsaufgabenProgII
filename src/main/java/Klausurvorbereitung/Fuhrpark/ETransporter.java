@@ -2,7 +2,7 @@ package Klausurvorbereitung.Fuhrpark;
 
 import java.util.List;
 
-public class ETransporter implements Fahrzeug,Elektrofahrzeug{
+public class ETransporter extends Fahrzeug implements Elektrofahrzeug{
     @Override
     public void kehreZurückZurLadestation() {
 

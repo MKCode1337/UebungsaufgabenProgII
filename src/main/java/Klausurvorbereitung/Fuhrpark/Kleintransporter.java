@@ -2,7 +2,7 @@ package Klausurvorbereitung.Fuhrpark;
 
 import java.util.List;
 
-public class Kleintransporter implements Fahrzeug{
+public class Kleintransporter extends Fahrzeug{
     public List<Fahrt> fahrtenbuch;
 
     @Override
