@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     final String benutzername;
-    String passwort;
+    transient String passwort;
 
     public User(String name, String pw) {
         this.benutzername = name;

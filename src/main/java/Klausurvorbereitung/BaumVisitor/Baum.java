@@ -23,7 +23,7 @@ public class Baum<E extends Comparable<E>>
         if (current.right != null) traversiere(current.right, visitor);
     }
     public int size(){
-        BaumVisitorImpl<E> bv = new BaumVisitorImpl();
+        BaumVisitorImpl<E> bv = new BaumVisitorImpl<>();
         traversiere(bv);
         return bv.getAnzahlKnoten();
     }

@@ -10,7 +10,8 @@ public class UserManager implements ObjectManager<User>{
     @Override
     public void serialize(List<User> users) {
         try(FileOutputStream os = new FileOutputStream("user.dat");
-                ObjectOutputStream oos = new ObjectOutputStream(os);){
+            BufferedOutputStream bos = new BufferedOutputStream(os);
+                ObjectOutputStream oos = new ObjectOutputStream(bos);){
             for(User u: users){
                 oos.writeObject(u);
                 oos.flush();
@@ -25,12 +26,14 @@ public class UserManager implements ObjectManager<User>{
     public List<User> deserialize() {
         List<User> users = new ArrayList<>();
         try(FileInputStream is = new FileInputStream("user.dat");
-            ObjectInputStream ois = new ObjectInputStream(is);){
-            while(ois.read()==1){
+            BufferedInputStream bis = new BufferedInputStream(is);
+            ObjectInputStream ois = new ObjectInputStream(bis);){
+            while(true){
                 User user = (User) ois.readObject();
                 users.add(user);
             }
         }
+        catch (EOFException e){}
         catch (Exception e){
             throw new RuntimeException();
         }

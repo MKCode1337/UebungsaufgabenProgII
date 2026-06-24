@@ -13,7 +13,8 @@ public class TwotterSystem {
             usermessages.get(u).add(m);
         }
         else {
-            List<Message> liste = List.of(m);
+            List<Message> liste = new ArrayList<>();
+            liste.add(m);
             usermessages.put(u,liste);
         }
     }

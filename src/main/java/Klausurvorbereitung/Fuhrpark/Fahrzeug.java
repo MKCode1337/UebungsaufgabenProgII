@@ -2,8 +2,13 @@ package Klausurvorbereitung.Fuhrpark;
 
 import java.util.List;
 
-public abstract class Fahrzeug {
+public abstract class Fahrzeug implements IFahrzeug {
+    public List<Fahrt> fahrtenbuch;
     public abstract double berechneEntgeld(Fahrt fahrt);
-    public abstract void eintragFahrtenbuch(Fahrt fahrt);
-    public abstract List<Fahrt> getFahrtenbuch();
+    public void eintragFahrtenbuch(Fahrt fahrt) {
+        fahrtenbuch.add(fahrt);
+    }
+    public List<Fahrt> getFahrtenbuch() {
+        return fahrtenbuch;
+    }
 }

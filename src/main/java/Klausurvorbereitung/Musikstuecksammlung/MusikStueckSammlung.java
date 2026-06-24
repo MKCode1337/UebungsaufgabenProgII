@@ -13,7 +13,7 @@ public class MusikStueckSammlung {
             musiksammlung.put(neu.titel, neu);
         }
     }
-    public List<MusikStueck> gibSortierteMusikStuecke(Comparator<MusikStueck> comp){
+    private List<MusikStueck> gibSortierteMusikStuecke(Comparator<MusikStueck> comp){
         List<MusikStueck> alleMusikStuecke = new ArrayList<>();
         alleMusikStuecke.addAll(musiksammlung.values());
         alleMusikStuecke.sort(comp);

@@ -3,26 +3,16 @@ package Klausurvorbereitung.Fuhrpark;
 import java.util.List;
 
 public class Umsatzberechner {
-    public List<Fahrzeug> fzgliste;
-    public List<Fahrt> fahrtenliste;
-
-    public double gesamtUmsatzBerechnen(){
-        return umsatzBerechnen(fzgliste);
+    public double berechneElektroumsatz(List<Elektrofahrzeug> efzgliste){
+        return gesamtUmsatzBerechnen(efzgliste);
     }
 
-    public double berechneElektroumsatz(){
+    public double gesamtUmsatzBerechnen(List<? extends IFahrzeug> fzgliste){
         double umsatz = 0;
-        List<Fahrzeug> efzg = fzgliste.stream().filter(f -> f instanceof Elektrofahrzeug).toList();
-        return umsatzBerechnen(efzg);
-    }
-
-    private double umsatzBerechnen(List<Fahrzeug> fzgliste){
-        double umsatz = 0;
-        for(Fahrzeug f : fzgliste){
-            fahrtenliste.addAll(f.getFahrtenbuch());
-        }
-        for(Fahrt f: fahrtenliste){
-            umsatz += f.fahrzeug.berechneEntgeld(f);
+        for(IFahrzeug fzg : fzgliste) {
+            for (Fahrt fa : fzg.getFahrtenbuch()) {
+                umsatz += fzg.berechneEntgeld(fa);
+            }
         }
         return umsatz;
     }
