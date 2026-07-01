@@ -19,5 +19,4 @@ public class WCWMain {
         }
         wcw.cancel();
     }
-
 }

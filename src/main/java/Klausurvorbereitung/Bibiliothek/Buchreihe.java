@@ -5,5 +5,5 @@ import java.util.List;
 
 public class Buchreihe {
     String name;
-    List<Buch> buecher = new ArrayList<>();
+    List<String> buecher = new ArrayList<>();
 }

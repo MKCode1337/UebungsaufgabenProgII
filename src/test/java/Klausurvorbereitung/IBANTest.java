@@ -17,8 +17,10 @@ IBAN iban = new IBAN();
     @Test
     public void checkIbanTest(){
         Assertions.assertTrue(iban.checkIban("DE22100100500123456789"));
-        assertThrows(FalscheIBANException.class, () -> iban.checkIban("FF22100100500123456789"));
-        assertThrows(FalscheIBANException.class, () -> iban.checkIban("DE12345"));
+        FalscheIBANException exceptionDE = assertThrows(FalscheIBANException.class, () -> iban.checkIban("FF22100100500123456789"));
+        FalscheIBANException exception22 = assertThrows(FalscheIBANException.class, () -> iban.checkIban("DE12345"));
+        assertEquals("IBAN beginnt nicht mit \"DE\"!", exceptionDE.getMessage());
+        assertEquals("IBAN muss 22 Stellen haben!", exception22.getMessage());
     }
     @Test
     public void liesIbanTest(){

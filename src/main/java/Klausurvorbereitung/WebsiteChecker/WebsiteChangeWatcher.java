@@ -22,10 +22,12 @@ public class WebsiteChangeWatcher{
             @Override
             public void run() {
                 try {
-                    String content = retrieveWebsiteContent();
-                    Thread.sleep(30000);
-                    String newContent = retrieveWebsiteContent();
-                    if (!content.equals(newContent)) websiteConsumer.accept(newContent);
+                    while (true) {
+                        String content = retrieveWebsiteContent();
+                        Thread.sleep(30000);
+                        String newContent = retrieveWebsiteContent();
+                        if (!content.equals(newContent)) websiteConsumer.accept(newContent);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

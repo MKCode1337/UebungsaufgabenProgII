@@ -19,10 +19,8 @@ public class RouletteZahlen implements Iterable<Integer>
 
         //Aufgabe c)
         RouletteZahlenIterator zahlenIterator = new RouletteZahlenIterator();
-        for (int i = 0; i <= 100; i++){
-            if (zahlenIterator.hasNext()) System.out.print(zahlenIterator.next()+"\n");
+        while(zahlenIterator.hasNext()){
+            System.out.print(zahlenIterator.next()+"\n");
         }
     }
 }
-
-
