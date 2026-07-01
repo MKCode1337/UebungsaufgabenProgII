@@ -1,4 +1,4 @@
-package Klausurvorbereitung;
+package Klausurvorbereitung.WebsiteChecker;
 
 import java.util.function.Consumer;
 
