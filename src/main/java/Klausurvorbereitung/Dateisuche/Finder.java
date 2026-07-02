@@ -37,9 +37,10 @@ public class Finder {
         Finder finder = new Finder();
         BufferedReader br = finder.getSystemInAsBufferedReader();
         String searchString = null;
+        String[] filenames = {"ECNr.txt"};
         try {
             searchString = br.readLine();
-            finder.findStringInFiles(searchString, args);
+            finder.findStringInFiles(searchString, filenames);
             br.close();
         } catch (IOException ex) {
             System.out.println("Einlesen fehlgeschlagen.");

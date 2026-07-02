@@ -18,4 +18,6 @@ public abstract class ObservationInstrument {
         if (this.operatingState<0) this.operatingState = 0;
     }
     public int getOperatingState(){return operatingState;}
+
+    public abstract double observationPerformance();
 }

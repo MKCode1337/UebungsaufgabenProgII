@@ -13,11 +13,10 @@ public class Morse {
         return ausgabe;
     }
 
-    public Map<Character,String> getMorseCodeMap(){
-        Map<Character,String> morseMap = new HashMap<>();
-        for(int i = 65; i<=90;i++){
-            char c = (char) i ;
-            morseMap.put(c, charToMorseCode(c));
+    public Map<String,String> getMorseCodeMap(){
+        Map<String,String> morseMap = new HashMap<>();
+        for(char c = 'A'; c <= 'Z';c++){
+            morseMap.put(String.valueOf(c), charToMorseCode(c));
         }
         return morseMap;
     }
